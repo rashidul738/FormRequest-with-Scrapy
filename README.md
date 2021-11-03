@@ -1,11 +1,11 @@
-##Requests and Responses¶
+## Requests and Responses¶
 Scrapy uses Request and Response objects for crawling web sites.
 
 Typically, Request objects are generated in the spiders and pass across the system until they reach the Downloader, which executes the request and returns a Response object which travels back to the spider that issued the request.
 
 Both Request and Response classes have subclasses which add functionality not required in the base classes. These are described below in Request subclasses and Response subclasses.
 
-Request objects¶
+## Request objects¶
 classscrapy.http.Request(*args, **kwargs)[source]¶
 A Request object represents an HTTP request, which is usually generated in the Spider and executed by the Downloader, and thus generating a Response.
 
@@ -47,6 +47,7 @@ request_with_cookies = Request(url="http://www.example.com",
                                         'value': 'USD',
                                         'domain': 'example.com',
                                         'path': '/currency'}])
+                                        
 The latter form allows for customizing the domain and path attributes of the cookie. This is only useful if the cookies are saved for later requests.
 
 When some site returns cookies (in a response) those are stored in the cookies for that domain and will be sent again in future requests. That’s the typical behaviour of any regular web browser.
