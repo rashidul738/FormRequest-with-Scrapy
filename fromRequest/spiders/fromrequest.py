@@ -25,4 +25,4 @@ class FromrequestSpider(scrapy.Spider):
                                   callback=self.parse_form)
         
     def parse_form(self, response):
-        print(response.css('#SocieteCotee1_FicheTechnique1_lblISIN ::text').get())    
+        print(response.xpath('//span[@id="SocieteCotee1_FicheTechnique1_lblISIN"]').get())    
